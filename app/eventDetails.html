@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootswatch/united/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="navbar">
+        <div class="navbar-inverse">
+            <ul class="nav">
+                <li>Hello</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+    <div ng-controller="eventController" style="padding-left: 20px">
+        <img ng-src="{{event.imageUrl}}">
+        <div class="row">
+            <div class="col-md-11">
+                <h2>{{event.name}}</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div><strong>Date: </strong>{{event.date}}</div>
+                <div><strong>Time: </strong>{{event.time}}</div>
+            </div>
+
+            <div class="col-md-4">
+                <div><strong>Address</strong></div>
+                <div>{{event.location.address}}</div>
+                <div>{{event.location.city}}</div>
+            </div>
+        </div>
+
+        <h3>Sessions</h3>
+
+        <ul class="list-unstyled">
+            <li ng-repeat="session in event.sessions">
+                <div class="row">
+                    <div class="col-md-1">
+                        <div class="well votingWidget">
+                            <div class="votingButton text-center" ng-click="upVoteSession(session)">
+                                <i class="fa fa-chevron-up"></i>
+                            </div>
+                            <div class="text-center">
+                                <div class="badge">
+                                    {{session.upVoteCount}}
+                                </div>
+                            </div>
+
+                            <div class="votingButton text-center" ng-click="downVoteSession(session)">
+                                <i class="fa fa-chevron-down"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-11">
+                        <div class="well">
+                            <h4 class="well-title">
+                                {{session.name}}
+                            </h4>
+                            <h6>{{session.creatorName}}</h6>
+                            <div>Duration: {{session.duration}}</div>
+                            <div>Level: {{session.level}}</div>
+                            <p class="text-info">{{session.abstract}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="lib/jquery/dist/jquery.min.js"></script>
+<script src="lib/underscore/underscore-min.js"></script>
+<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="lib/angular/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/eventController.js"></script>
+</body>
+</html>
