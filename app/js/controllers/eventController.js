@@ -7,6 +7,8 @@
 angular.module("eventsApp").controller("eventController", eventController);
 
 function eventController($scope){
+    
+    $scope.sortOrder = "name";
     $scope.event = {
         name : "Angular bootcamp",
         date: "5/5/2016",
@@ -42,5 +44,13 @@ function eventController($scope){
                 upVoteCount: 0
             }
         ]
+    };
+    
+    $scope.upVoteSession = function(session){
+        session.upVoteCount++;
+    };
+
+    $scope.downVoteSession = function(session){
+        session.upVoteCount--;
     };
 }
