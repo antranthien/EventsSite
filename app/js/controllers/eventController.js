@@ -21,8 +21,8 @@ function eventController($scope){
         sessions: [
             {
                 name: "Session 1",
-                creatorName: "An Tran",
-                duration: "1 hour",
+                creatorName: "An Tran Advanced",
+                duration: 1,
                 level: "Intermediate",
                 abstract: "The first session of the conference",
                 upVoteCount: 2
@@ -30,7 +30,7 @@ function eventController($scope){
             {
                 name: "Session 2",
                 creatorName: "Duc Nguyen",
-                duration: "2 hours",
+                duration: 2,
                 level: "Advanced",
                 abstract: "The second session of the conference",
                 upVoteCount: 3
@@ -38,7 +38,7 @@ function eventController($scope){
             {
                 name: "Session 3",
                 creatorName: "Bao Nguyen",
-                duration: "1 hour",
+                duration: 4,
                 level: "Intermediate",
                 abstract: "The third session of the conference",
                 upVoteCount: 0
