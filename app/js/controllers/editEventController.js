@@ -4,8 +4,12 @@
 angular.module("eventsApp").controller("editEventController", editEventController);
 
 function editEventController($scope){
-    $scope.saveEvent = function(event){
-        alert(event.name)
+    $scope.saveEvent = function(event, newEventForm){
+        //console.log(newEventForm);
+        if(newEventForm.$valid){
+            alert(event.name)
+        }
+
     };
 
     $scope.cancelEdit = function(){
